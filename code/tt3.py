@@ -14,6 +14,7 @@ api = TwitterAPI(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_TOKEN_KEY,ACCESS_TOKEN_SECR
 r = api.request('statuses/filter', {'locations':'-74,40,-73,41'})
 for item in r:		
 #To filter tweets with location information
-        if item['place']['name']=='Manhattan':
+        if item['place']['name']=='Manhattan' and item['geo']!=null:
        		print json.dumps(item, indent=1)
+       		stdout.flush()
        		print "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
