@@ -1,4 +1,6 @@
 from TwitterAPI import TwitterAPI
+import json
+from sys import stdout
 
 CONSUMER_KEY = '8aIDWdGQuFgC9oypr2yozz6KY'
 CONSUMER_SECRET = 'tn3FJdxt22QrHgim07mmaWOxFhNCtj7BB3pAjNVEw9aVZyECWC'
@@ -10,5 +12,9 @@ api = TwitterAPI(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_TOKEN_KEY,ACCESS_TOKEN_SECR
 
 
 r = api.request('statuses/filter', {'locations':'-74,40,-73,41'})
-for item in r:
-        print(item)
+for item in r:		
+#    	out = json.dumps(item)
+#    	print item
+#    	print type(out)
+        if item['text']!='null':
+        	print "$$$$$$$$$$$$$$"
