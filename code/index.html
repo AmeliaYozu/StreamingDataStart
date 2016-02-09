@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
 <ul id="list">
@@ -13,6 +13,7 @@ ws.onmessage = function(e) {
   d3.select('#list')
     .append('li')
     .text(e.data)
+    console.log("########################################################################")
 }
 </script>
 </body>
